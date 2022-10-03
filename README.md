@@ -35,4 +35,7 @@ In the case that a developer doesn't want to use the ntmaster bulk signing appli
 
 5. Once your batch has been fetched, enter your Xrp Address and your secret to sign all the transactions. You can visit an explorer such as https://nft-devnet.xrpl.org/ to see the transactions on the dev net as they are being signed.
 
+## Note
+This repository has been ported from the original NFTMASTER repo.
+
 Done!
