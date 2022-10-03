@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NftmasterBulkMintApp.MainPage">
-			 
+
     <ScrollView>
         <VerticalStackLayout 
             Spacing="25" 
@@ -10,32 +10,99 @@
             VerticalOptions="Center">
 
             <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                Source="nftmaster_box_logo.png"
+                SemanticProperties.Description=""
                 HeightRequest="200"
                 HorizontalOptions="Center" />
-                
+
             <Label 
-                Text="Hello, World!"
+                Text="NFTMASTER - Bulk Mint"
+                x:Name="TitleLbl"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 HorizontalOptions="Center" />
-            
+
+            <ProgressBar 
+                x:Name="ProgressBar" 
+                IsVisible="false" 
+                Progress="0" />
+
             <Label 
-                Text="Welcome to .NET Multi-platform App UI"
+                Text="Enter your bulk mint code:"
+                x:Name="BulkMintCodeLbl"
                 SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                SemanticProperties.Description="Enter your bulk mint code:"
                 FontSize="18"
                 HorizontalOptions="Center" />
 
+            <Frame HeightRequest="45" Margin="-20, 0, 0, 0" Padding="0" HasShadow="True" BorderColor="Grey" HorizontalOptions="FillAndExpand">
+                <Entry x:Name="BulkMintCodeText" VerticalOptions="Center" Placeholder="Batch Code" Keyboard="Text" />
+            </Frame>
+
             <Button 
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
+                x:Name="SubmitBatchCodeBtn"
+                Text="Submit"
+                SemanticProperties.Hint=""
+                Clicked="OnSubmitBatchCodeClicked"
                 HorizontalOptions="Center" />
+
+            <Label 
+                x:Name="FormResultTxt"
+                Text=""
+                SemanticProperties.HeadingLevel="Level1"
+                FontAttributes="Bold"
+                FontSize="16"
+                HorizontalOptions="Center" />
+
+            <Label 
+                Text="Xrp Address:"
+                x:Name="XrpAddressLbl"
+                IsVisible="false"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description=""
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+
+            <Frame HeightRequest="45" Margin="-20, 0, 0, 0" Padding="0" HasShadow="True" BorderColor="Grey" HorizontalOptions="FillAndExpand">
+                <Entry IsVisible="false" x:Name="XrpAddressTxt" VerticalOptions="Center" Placeholder="XrpAddress" Keyboard="Text" />
+            </Frame>
+            <Label 
+                Text="Secret:"
+                x:Name="SecretLbl"
+                IsVisible="false"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description=""
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+
+            <Frame HeightRequest="45" Margin="-20, 0, 0, 0" Padding="0" HasShadow="True" BorderColor="Grey" HorizontalOptions="FillAndExpand">
+                <Entry IsVisible="false" x:Name="SecretTxt" VerticalOptions="Center" Placeholder="Secret" Keyboard="Text" />
+            </Frame>
+
+            <Button 
+                x:Name="MintBtn"
+                IsVisible="false"
+                Text="Mint Batch"
+                SemanticProperties.Hint=""
+                Clicked="OnMintBtnClicked"
+                HorizontalOptions="Center" />
+
+
+            <Button 
+                x:Name="RestartBtn"
+                IsVisible="false"
+                Padding="10"
+                Text="Restart"
+                SemanticProperties.Hint=""
+                Clicked="RestartBtnClicked"
+                HorizontalOptions="Center"
+                BackgroundColor="Red"/>
+
 
         </VerticalStackLayout>
     </ScrollView>
- 
+
+
 </ContentPage>
